@@ -7,31 +7,36 @@ package controlador;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author ASUS VIVOBOOK
  */
 public class Conexion {
-// Nombre de la base de datos
-    private static final String BD = "facturacionotra";
+    //Nombre del HOST o la IP donde esta La base PostgresSQL.
+    private static final String HOST = "localhost";
+    
+    // Nombre de la base de datos
+    private static final String BD = "visual";
 
     // Usuario de PostgreSQL
     private static final String USER = "postgres";
 
     // Contraseña de PostgreSQL
-    private static final String PASS = "1234";
+    private static final String PASS = "hadesz";
 
     // URL de conexión
     private static final String URL =
-            "jdbc:postgresql://localhost:5432/" + BD;
+            "jdbc:postgresql://" + HOST + ":5432/" + BD;
 
     public static Connection conectar() {
 
         Connection con = null;
 
         try {
-
             // Cargar driver
             Class.forName("org.postgresql.Driver");
 
@@ -53,5 +58,15 @@ public class Conexion {
         }
 
         return con;
+    }
+    
+    public static void cerrarConexion(Connection con){
+        if (con != null) {
+            try {
+                if (!con.isClosed()) con.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Error al cerrar: " + ex.getMessage());
+            }         
+        }
     }
 }
