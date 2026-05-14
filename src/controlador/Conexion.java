@@ -20,13 +20,13 @@ public class Conexion {
     private static final String HOST = "localhost";
     
     // Nombre de la base de datos
-    private static final String BD = "visual";
+    private static final String BD = "xxxxxxxxx";
 
     // Usuario de PostgreSQL
-    private static final String USER = "postgres";
+    private static final String USER = "xxxxxxx";
 
     // Contraseña de PostgreSQL
-    private static final String PASS = "hadesz";
+    private static final String PASS = "xxxxxx";
 
     // URL de conexión
     private static final String URL =

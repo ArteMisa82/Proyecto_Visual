@@ -4,6 +4,11 @@
  */
 package DAO;
 
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import modelosDatos.Producto;
+
 /**
  *
  * @author anave
@@ -19,4 +24,15 @@ public class ProductoDao {
      * para eliminar(desactivar)
      * para descontar el stock al realizar una venta
      */
+    
+//    public List<Producto> listarActivos(){
+//        List<Producto> lista = new ArrayList<>();
+//        String sqlSelect = "Select id, codigo, nombre, precio, stock, codigo_barras" + 
+//                "From producos WHERE activo = true orden by nombre";
+//        Connection con = null;
+//        
+//        con = (Connection) controlador.Conexion.conectar();
+//        //PreparedStament psd = con.prepareStatement(sqlSelect);
+//        
+//    }
 }
